@@ -1100,76 +1100,14 @@ function showToast(msg){
 
 // ── DOWNLOAD RESUME ──────────────────────────────
 function downloadResume(){
-  // Creates a nicely formatted text resume for download
-  const content = `DEBASMITA CHATTERJEE
-Data Scientist & ML Engineer
-+91 8392010363 | dmchatterjee2016@gmail.com
-LinkedIn: https://www.linkedin.com/in/debasmita-chatterjee/
-GitHub: https://github.com/debasmita30
-Portfolio: https://ml-engineer-portfolio-f2df.vercel.app/
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-EDUCATION
-Lovely Professional University — Punjab, India
-B.Tech in Computer Science and Engineering, Minor in Data Science
-2022 – 2026 (Ongoing)
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-EXPERIENCE
-Outlier.ai — AI Trainer, LLM Evaluation (Freelance)
-Aug 2025 – Jan 2026 | Remote
-• Evaluated 1600+ LLM responses using structured rubrics
-• Performed comparative ranking and preference annotation across multilingual tasks
-• Analyzed failure patterns to support RLHF-based model improvement
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-RESEARCH
-Explainable Crop Recommendation & Yield Prediction — ICRCET 2026
-• ML models for crop classification (22 classes) and yield prediction on 246K+ records
-• Accuracy: 99.7%, R²: 0.80
-• Applied SHAP for explainability; Optuna for hyperparameter tuning
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-TECHNICAL SKILLS
-Languages: Python, SQL, R
-ML & Data: Scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, NLP, Feature Engineering
-Visualization: Power BI, Tableau
-Data Engineering: ETL, Data Pipelines, Data Modeling, SQL Analytics
-Tools: Git, Docker
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-PROJECTS
-1. Multimodal Return Risk Analysis System
-   GitHub: https://github.com/debasmita30/ai-return-assistant
-   Live: https://enterprise-ai-governance-risk.streamlit.app/
-   • 28GB+ multimodal data | BiLSTM F1: 0.89 | ResNet-50 CNN: 94%
-
-2. User Behavior Analytics & A/B Testing
-   GitHub: https://github.com/debasmita30/product-user-behavior-ab-testing
-   • 50K+ sessions | +0.22% conversion (p=0.003) | 2x high-intent conversion
-
-3. Retail Product Analytics & Recommendation Modeling
-   GitHub: https://github.com/debasmita30/SmartStyle-Analytics-AI-Powered-Fashion-Recommendation-Insights-Platform
-   Live: https://smartstyle-analytics.streamlit.app/
-   • 14K+ products | 35%+ sales by top colors
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-ACHIEVEMENTS & CERTIFICATIONS
-• ET GenAI Hackathon — Selected for Round 2 from 54,618+ participants
-• SAP Certified Data Analyst (2026)
-• OCI AI Foundations Associate (2026)
-`;
-  const blob=new Blob([content],{type:'text/plain'});
+  const rawUrl='https://raw.githubusercontent.com/debasmita30/Data-Scientist-Portfolio/main/Data_Scientist.pdf';
   const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='Debasmita_Chatterjee_Resume.txt';
+  a.href=rawUrl;
+  a.download='Debasmita_Chatterjee_Resume.pdf';
+  a.target='_blank';
+  document.body.appendChild(a);
   a.click();
+  document.body.removeChild(a);
   showToast('Resume downloaded! 📄');
 }
 
